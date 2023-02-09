@@ -24,10 +24,16 @@ function App() {
     },
   ];
 
+  function saveExpenseHandler(newExpense) {
+    expenses.push(newExpense);
+    console.log(expenses);
+    console.log(newExpense);
+  }
+
   return (
     <div>
       <h1>Expense Tracker App</h1>
-      <AddExpense />
+      <AddExpense onSaveExpense={saveExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
